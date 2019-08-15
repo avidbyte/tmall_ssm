@@ -17,8 +17,8 @@
         $("#addForm").submit(function() {
             if (!checkEmpty("name", "产品名称"))
                 return false;
-//          if (!checkEmpty("subTitle", "小标题"))
-//              return false;
+         if (!checkEmpty("subTitle", "小标题"))
+             return false;
             if (!checkNumber("originalPrice", "原价格"))
                 return false;
             if (!checkNumber("promotePrice", "优惠价格"))
@@ -64,9 +64,9 @@
                     <td>${p.id}</td>
                     <td>
 
-                            <%--<c:if test="${!empty p.firstProductImage}">--%>
-                            <%--<img width="40px" src="img/productSingle/${p.firstProductImage.id}.jpg">--%>
-                            <%--</c:if>--%>
+                            <c:if test="${!empty p.firstProductImage}">
+                            <img width="40px" src="img/productSingle/${p.firstProductImage.id}.jpg">
+                            </c:if>
 
                     </td>
                     <td>${p.name}</td>
