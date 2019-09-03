@@ -40,7 +40,7 @@ public class OrderItemServiceImpl implements OrderItemService {
         setProduct(result);
         return result;
     }
-
+    @Override
     public List<OrderItem> list(){
         OrderItemExample example =new OrderItemExample();
         example.setOrderByClause("id desc");
@@ -54,7 +54,7 @@ public class OrderItemServiceImpl implements OrderItemService {
             fill(o);
         }
     }
-
+    @Override
     public void fill(Order o) {
         OrderItemExample example =new OrderItemExample();
         example.createCriteria().andOidEqualTo(o.getId());
@@ -94,6 +94,15 @@ public class OrderItemServiceImpl implements OrderItemService {
         for (OrderItem oi : ois) {
             result+=oi.getNumber();
         }
+        return result;
+    }
+
+    @Override
+    public List<OrderItem> listByUser(int uid) {
+        OrderItemExample example =new OrderItemExample();
+        example.createCriteria().andUidEqualTo(uid).andOidIsNull();
+        List<OrderItem> result =orderItemMapper.selectByExample(example);
+        setProduct(result);
         return result;
     }
 

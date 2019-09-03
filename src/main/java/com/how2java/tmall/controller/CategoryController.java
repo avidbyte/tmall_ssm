@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.how2java.tmall.pojo.Category;
 import com.how2java.tmall.service.CategoryService;
+import com.how2java.tmall.service.OrderService;
 import com.how2java.tmall.util.ImageUtil;
 import com.how2java.tmall.util.Page;
 import com.how2java.tmall.util.UploadedImageFile;
@@ -26,6 +27,8 @@ import java.util.List;
 public class CategoryController {
     @Autowired
     CategoryService categoryService;
+    @Autowired
+    private OrderService orderService;
 
     @RequestMapping("admin_category_list")
     public String list(Model model, Page page) {
@@ -93,4 +96,5 @@ public class CategoryController {
         }
         return "redirect:/admin_category_list";
     }
+
 }
