@@ -175,6 +175,19 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>io.github.avidbyte</groupId>
+      <artifactId>netty-websocket-boot-starter</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+           
+    <dependency>
+      <groupId>io.github.avidbyte</groupId>
+      <artifactId>wordshield</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+           
   </dependencies>
 
   <build>
